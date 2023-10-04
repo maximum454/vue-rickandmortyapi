@@ -14,8 +14,8 @@ export default {
 
     },
     actions: {
-        async fetchCharacter(ctx, name, status, species, type, gender) {
-            const res = await fetch(`https://rickandmortyapi.com/api/character?name=rick&status=alive`)
+        async fetchCharacter(ctx) {
+            const res = await fetch(`https://rickandmortyapi.com/api/character`)
             const characters = await res.json();
             ctx.commit('updateCharacter', characters.results)
         },

@@ -1,8 +1,7 @@
 <template>
 	<div class="about">
 		<h1>The Rick and Morty API</h1>
-		<a href="">https://rickandmortyapi.com/</a>
-		<p>используя этот апи сделать таблицу всех персонажей</p>
+		<p><a href="">https://rickandmortyapi.com/</a> - используя этот апи сделать таблицу всех персонажей</p>
 		<h2>требования</h2>
 		<ul>
 			<li>Вывести всех персонажей на одной странице</li>
