@@ -6,6 +6,9 @@
 			<router-link to="/about">О Заданий</router-link>
 		</nav>
 		<router-view/>
+		<footer class="footer">
+			Karachyov Maxim
+		</footer>
 	</div>
 </template>
 
@@ -29,5 +32,12 @@ nav {
 			color: #42b983;
 		}
 	}
+}
+.footer{
+	background-color: rgb(39, 43, 51);
+	padding: 20px;
+	margin: 0 -20px;
+	color: #ffffff;
+	font-size: 16px;
 }
 </style>
