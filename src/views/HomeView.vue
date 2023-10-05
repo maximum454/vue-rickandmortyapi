@@ -29,6 +29,16 @@
 			</tbody>
 		</table>
 		</div>
+
+		<div class="pagination">
+			<div class="pagination__body">
+				<div class="pagination__item prev" @click="changePage(pages.prev)">Пред.</div>
+				<div class="pagination__item" v-for="page in pages.pages" @click="NumPage(page)">
+					{{page}}
+				</div>
+				<div class="pagination__item next" @click="changePage(pages.next)">След.</div>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -53,10 +63,10 @@ export default {
 		];
 		const sortField = ref('id')
 		const typeSort = ref('asc')
+		const pagesCount = ref(null)
 
 
 		const allCharacters = computed(() => store.getters.getCharacter);
-
 
 		const sortCharacters = computed(() => {
 			return allCharacters.value.sort((a, b) => {
@@ -73,6 +83,20 @@ export default {
 				return 0
 			})
 		})
+
+		const pages = computed(() => store.getters.getPage);
+
+		const NumPage = (page) => {
+			store.dispatch('fetchCharacter', page)
+		}
+
+		const changePage = (url) => {
+			console.log(url)
+			if(url === null) return false
+			const urlP = new URL(url).searchParams.get('page')
+			store.dispatch('fetchCharacter', urlP)
+		}
+
 
 		const sortHandler = (name) => {
 			if(sortField.value === name){
@@ -94,6 +118,9 @@ export default {
 			allCharacters,
 			sortCharacters,
 			sortHandler,
+			pages,
+			NumPage,
+			changePage,
 			columns
 		}
 	}

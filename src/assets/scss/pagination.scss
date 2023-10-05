@@ -1,0 +1,27 @@
+.pagination{
+  &__body{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+  }
+  &__item{
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: rgb(39, 43, 51);
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    cursor: pointer;
+    &:hover{
+      background-color: rgba(39, 43, 51, .4);
+    }
+  }
+}
